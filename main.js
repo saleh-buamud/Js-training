@@ -1,26 +1,34 @@
-// Define two numbers for arithmetic operations
-const num1 = 10;
-const num2 = 4;
+// Get the greeting text from the element with id 'getting'
+const greeting = document.getElementById('getting').innerText; // "Hello"
 
-// Perform basic arithmetic operations
-const sum = num1 + num2;
-const multiplication = num1 * num2;
-const division = num1 / num2;
-const modulus = num1 % num2;
+// Print the original greeting
+console.log(greeting + '\n');
 
-// Create a formatted message with the results
-const message =
-    `First Number     : ${num1}\n` +
-    `Second Number    : ${num2}\n` +
-    `Sum              : ${sum}\n` +
-    `Multiplication   : ${multiplication}\n` +
-    `Division         : ${division}\n` +
-    `Modulus          : ${modulus}`;
+// Convert greeting to lowercase and display it in an h2 element
+const greetingLowerCase = greeting.toLowerCase();
+const lowerCaseHeading = document.createElement('h2');
+lowerCaseHeading.innerText = greetingLowerCase;
+document.body.appendChild(lowerCaseHeading);
+console.log(greetingLowerCase + '\n');
 
-// Print the message to the console
-console.log(message);
+// Convert greeting to uppercase and display it in an h3 element
+const greetingUpperCase = greeting.toUpperCase();
+const upperCaseHeading = document.createElement('h3');
+upperCaseHeading.innerText = greetingUpperCase;
+document.body.appendChild(upperCaseHeading);
+console.log(greetingUpperCase + '\n');
 
-// Display the message on the webpage
-const resultParagraph = document.createElement("p");
-resultParagraph.textContent = message;
-document.body.appendChild(resultParagraph);
+// Replace character 'o' with 'y' in the greeting and display it in an h4 element
+const greetingWithY = greeting.replace('o', 'y');
+const replacedHeading = document.createElement('h4');
+replacedHeading.innerText = greetingWithY;
+document.body.appendChild(replacedHeading);
+console.log(greetingWithY + '\n');
+
+// Convert the greeting to uppercase, reverse it, and display it in an h5 element
+const modifiedGreetingUpper = greeting.toUpperCase();
+const reversedGreeting = modifiedGreetingUpper.split('').reverse().join('');
+const reversedHeading = document.createElement('h5');
+reversedHeading.innerText = reversedGreeting;
+document.body.appendChild(reversedHeading);
+console.log(reversedGreeting);
