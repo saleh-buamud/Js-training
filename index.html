@@ -9,16 +9,48 @@
 </head>
 <style>
   div {
-    background-color: lightgray;
+    background-color: rgb(229, 8, 8);
     padding: 20px;
     border-radius: 5px;
+  }
+
+  div input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  div h3 {
+    color: white;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+  }
+
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
   }
 </style>
 
 <body>
 
   <div>
-    <h1 id="getting"> Hello World</h1>
+
+    <!-- <h1 id="getting"> Hello World</h1> -->
+    <form action="#" id="form-getting">
+      <input type="text" id="getting">
+      <button id="btn-getting">Submit</button>
+    </form>
     <h3 id="result"></h3>
   </div>
 

@@ -1,25 +1,25 @@
-// Get the greeting text from the element with id 'getting'
-const greeting = document.getElementById('getting').innerText; // "Hello"
+// Add click event listener to the greeting button
+document.getElementById('btn-getting').addEventListener('click', function () {
+    // Get the value from the greeting input field
+    const inputGreeting = document.getElementById('getting').value;
 
-// Print the original greeting
-console.log(greeting + '\n');
+    // Convert greeting to lowercase
+    const greetingLowerCase = inputGreeting.toLowerCase();
+    console.log(greetingLowerCase + '\n');
 
-// Convert greeting to lowercase and display it in an h2 element
-const greetingLowerCase = greeting.toLowerCase();
-console.log(greetingLowerCase + '\n');
+    // Convert greeting to uppercase
+    const greetingUpperCase = inputGreeting.toUpperCase();
+    console.log(greetingUpperCase + '\n');
 
-// Convert greeting to uppercase and display it in an h3 element
-const greetingUpperCase = greeting.toUpperCase();
-console.log(greetingUpperCase + '\n');
+    // Replace character 'S' with 'W' in the greeting
+    const greetingWithW = inputGreeting.replace('S', 'W');
+    console.log(greetingWithW + '\n');
 
-// Replace character 'o' with 'y' in the greeting and display it in an h4 element
-const greetingWithY = greeting.replace('o', 'y');
+    // Convert the greeting to uppercase, reverse it
+    const reversedGreeting = greetingUpperCase.split('').reverse().join('');
+    console.log(reversedGreeting);
 
-console.log(greetingWithY + '\n');
-
-// Convert the greeting to uppercase, reverse it, and display it in an h5 element
-const modifiedGreetingUpper = greeting.toUpperCase();
-const reversedGreeting = modifiedGreetingUpper.split('').reverse().join('');
-console.log(reversedGreeting);
-
-document.getElementById('result').innerText = `${greeting} \n${greetingLowerCase} \n${greetingUpperCase} \n${greetingWithY} \n${reversedGreeting}`;
+    // Display all results in the result container
+    document.getElementById('result').innerText =
+        `${inputGreeting} ----- ${greetingLowerCase} ----- ${greetingUpperCase} ----- ${greetingWithW}  ----- ${reversedGreeting}`;
+});
