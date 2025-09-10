@@ -1,25 +1,26 @@
-// Add click event listener to the greeting button
-document.getElementById('btn-getting').addEventListener('click', function () {
-    // Get the value from the greeting input field
-    const inputGreeting = document.getElementById('getting').value;
+// Add click event listener to the submit button
+document.getElementById('btn-getting').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent form submission
 
-    // Convert greeting to lowercase
-    const greetingLowerCase = inputGreeting.toLowerCase();
-    console.log(greetingLowerCase + '\n');
+    // Get user input values
+    const userWeight = document.getElementById('input-weight').value;
+    const userHeight = document.getElementById('input-height').value;
 
-    // Convert greeting to uppercase
-    const greetingUpperCase = inputGreeting.toUpperCase();
-    console.log(greetingUpperCase + '\n');
+    // Calculate BMI (Body Mass Index)
+    const bmi = userWeight / (userHeight * userHeight);
 
-    // Replace character 'S' with 'W' in the greeting
-    const greetingWithW = inputGreeting.replace('S', 'W');
-    console.log(greetingWithW + '\n');
+    // Reference to result element
+    const resultElement = document.getElementById('result');
 
-    // Convert the greeting to uppercase, reverse it
-    const reversedGreeting = greetingUpperCase.split('').reverse().join('');
-    console.log(reversedGreeting);
-
-    // Display all results in the result container
-    document.getElementById('result').innerText =
-        `${inputGreeting} ----- ${greetingLowerCase} ----- ${greetingUpperCase} ----- ${greetingWithW}  ----- ${reversedGreeting}`;
+    // Display BMI category
+    if (bmi < 18.5) {
+        resultElement.innerHTML = `${bmi} Underweight`;
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+        resultElement.innerHTML = `${bmi} Normal weight`;
+    } else if (bmi >= 25 && bmi <= 29.9) {
+        resultElement.innerHTML = `${bmi} Overweight`;
+    } else {
+        resultElement.innerHTML = `${bmi} Obesity`;
+    }
 });
+
