@@ -22,5 +22,19 @@ document.getElementById('btn-getting').addEventListener('click', function (event
     } else {
         resultElement.innerHTML = `${bmi} Obesity`;
     }
+
+    // switch (true) {
+    //     case (bmi < 18.5):
+    //         resultElement.innerHTML = `${bmi} Underweight`;
+    //         break;
+    //     case (bmi >= 18.5 && bmi <= 24.9):
+    //         resultElement.innerHTML = `${bmi} Normal weight`;
+    //         break;
+    //     case (bmi >= 25 && bmi <= 29.9):
+    //         resultElement.innerHTML = `${bmi} Overweight`;
+    //         break;
+    //     default:
+    //         resultElement.innerHTML = `${bmi} Obesity`;
+    // }
 });
 
