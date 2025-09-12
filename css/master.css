@@ -1,28 +1,23 @@
 form {
     display: grid;
-    width: 300px;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
 
-form input {
-    padding: 4px;
-    margin: 2px;
-    border: 1px solid gray;
-    border-radius: 20px;
+form .input {
+    padding: 6px;
+    margin: 10px;
 }
 
-form .add {
+.add {
     background-color: green;
     color: aliceblue;
     border: none;
-    cursor: pointer;
-}
-
-form .delete {
-    background-color: rgb(128, 0, 0);
-    color: aliceblue;
-    border: none;
+    width: 100px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
 }
 
