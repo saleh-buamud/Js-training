@@ -1,30 +1,39 @@
-// Initialize an empty array to store student names
-let studentList = [];
+// Array containing all student names
+const studentNames = ['Saleh', 'Noor', 'Mohamed', 'Mona', 'Hana'];
 
-// Check type of studentList in console (for debugging)
-console.log(typeof studentList);
+// Flag to indicate if the searched student was found
+let isStudentFound = false;
 
-// Handle add student button click
-document.getElementById("insert").addEventListener("click", function () {
-    // Get input value (student name) from input field
-    let studentName = document.getElementById("student").value;
+// Display all student names separated by dashes
+document.getElementById('studentName').innerHTML = studentNames.join(' --- ') + '<br>';
 
-    // Push the new student into the array
-    studentList.push(studentName);
+// Add click event listener to the search button
+document.getElementById('buttonSearch').addEventListener('click', function () {
+    // Get the value entered by the user in the search input
+    const searchInput = document.getElementById('searchInput').value;
 
-    // Display updated student list in the result container
-    document.getElementById("result").innerHTML = `${studentList.join(", ")} <br>`;
-    document.getElementById("student").value = ""; // Clear input field after adding
-});
+    // Convert the input to lowercase for case-insensitive comparison
+    const searchInputLowerCase = searchInput.toLowerCase();
 
-// Handle delete student button click
-document.getElementById("delete").addEventListener("click", function () {
-    // Remove the last student from the array
-    studentList.pop();
+    // Loop through the student names array to check for a match
+    for (let i = 0; i < studentNames.length; i++) {
+        // Compare each student name (in lowercase) with the search input
+        if (searchInputLowerCase === studentNames[i].toLowerCase()) {
+            isStudentFound = true;
+            break;
+        }
+    }
 
-    // Update the result container with the current student list
-    document.getElementById("result").innerHTML = `${studentList.join(", ")} <br>`;
+    // Display result based on whether the student was found or not
+    if (!isStudentFound) {
+        document.getElementById('result').innerHTML = 'NOT found';
+    } else {
+        document.getElementById('result').innerHTML = 'FOUND';
+    }
 
-    // Log the updated array in console for debugging
-    console.log(studentList);
+    // Reset the flag for the next search
+    isStudentFound = false;
+
+    // Clear the search input field
+    document.getElementById('add').value = '';
 });
