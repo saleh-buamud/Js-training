@@ -1,52 +1,30 @@
-// // Add click event listener to the submit button
-// document.getElementById('btn-getting').addEventListener('click', function (event) {
-//     event.preventDefault(); // Prevent form submission
+// Initialize an empty array to store student names
+let studentList = [];
 
-//     // Get user input values
-//     const userWeight = document.getElementById('input-weight').value;
-//     const userHeight = document.getElementById('input-height').value;
+// Check type of studentList in console (for debugging)
+console.log(typeof studentList);
 
-//     // Calculate BMI (Body Mass Index)
-//     const bmi = userWeight / (userHeight * userHeight);
+// Handle add student button click
+document.getElementById("insert").addEventListener("click", function () {
+    // Get input value (student name) from input field
+    let studentName = document.getElementById("student").value;
 
-//     // Reference to result element
-//     const resultElement = document.getElementById('result');
+    // Push the new student into the array
+    studentList.push(studentName);
 
-//     // Display BMI category
-//     if (bmi < 18.5) {
-//         resultElement.innerHTML = `${bmi} Underweight`;
-//     } else if (bmi >= 18.5 && bmi <= 24.9) {
-//         resultElement.innerHTML = `${bmi} Normal weight`;
-//     } else if (bmi >= 25 && bmi <= 29.9) {
-//         resultElement.innerHTML = `${bmi} Overweight`;
-//     } else {
-//         resultElement.innerHTML = `${bmi} Obesity`;
-//     }
+    // Display updated student list in the result container
+    document.getElementById("result").innerHTML = `${studentList.join(", ")} <br>`;
+    document.getElementById("student").value = ""; // Clear input field after adding
+});
 
-//     // switch (true) {
-//     //     case (bmi < 18.5):
-//     //         resultElement.innerHTML = `${bmi} Underweight`;
-//     //         break;
-//     //     case (bmi >= 18.5 && bmi <= 24.9):
-//     //         resultElement.innerHTML = `${bmi} Normal weight`;
-//     //         break;
-//     //     case (bmi >= 25 && bmi <= 29.9):
-//     //         resultElement.innerHTML = `${bmi} Overweight`;
-//     //         break;
-//     //     default:
-//     //         resultElement.innerHTML = `${bmi} Obesity`;
-//     // }
-// });
+// Handle delete student button click
+document.getElementById("delete").addEventListener("click", function () {
+    // Remove the last student from the array
+    studentList.pop();
 
-const numberOne = 10;
-const numberTwo = 20;
-const result = numberOne + "" + numberTwo;
-console.log(result); // Output: "1020"
-console.log(typeof result); // Output: "string"
+    // Update the result container with the current student list
+    document.getElementById("result").innerHTML = `${studentList.join(", ")} <br>`;
 
-const resultTemplateLiterals = `${numberOne}${numberTwo}`;
-console.log(resultTemplateLiterals); // Output: "1020"
-
-
-const resultTemplateLiteralsNew = `${numberOne} \n${numberTwo}`;
-console.log(resultTemplateLiteralsNew); // Output: "10
+    // Log the updated array in console for debugging
+    console.log(studentList);
+});
