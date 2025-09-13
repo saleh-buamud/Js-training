@@ -47,15 +47,35 @@
 // ];
 // console.log(students);
 
-for (let multiplier = 1; multiplier <= 10; multiplier++) {
-    // Create a title for the current multiplication table
-    const tableTitle = `Multiplication Table ${multiplier}`;
-    document.getElementById("result").innerHTML += `<h2>${tableTitle}</h2>`;
+// for (let multiplier = 1; multiplier <= 10; multiplier++) {
+//     // Create a title for the current multiplication table
+//     const tableTitle = `Multiplication Table ${multiplier}`;
+//     document.getElementById("result").innerHTML += `<h2>${tableTitle}</h2>`;
 
-    for (let multiplicand = 1; multiplicand <= 10; multiplicand++) {
-        // Calculate the product of multiplier and multiplicand
-        const product = multiplier * multiplicand;
-        document.getElementById("result").innerHTML += `${multiplier} x ${multiplicand} = ${product}<br>`;
+//     for (let multiplicand = 1; multiplicand <= 10; multiplicand++) {
+//         // Calculate the product of multiplier and multiplicand
+//         const product = multiplier * multiplicand;
+//         document.getElementById("result").innerHTML += `${multiplier} x ${multiplicand} = ${product}<br>`;
+//     }
+//     document.getElementById("result").innerHTML += `<hr>`;
+// }
+// Improved variable naming and best practices for lines 62-74
+
+/**
+ * Returns a new array with the elements reversed.
+ * @param {Array} originalArray - The array to reverse.
+ * @returns {Array} reversedArray - The reversed array.
+ */
+function reverseArray(originalArray = []) {
+    const reversedArray = [];
+
+    // Add each element to the beginning of the new array
+    for (let index = 0; index < originalArray.length; index++) {
+        reversedArray.unshift(originalArray[index]);
     }
-    document.getElementById("result").innerHTML += `<hr>`;
+    return reversedArray;
 }
+
+const sampleArray = ['saleh', 1, 2, 3, 4, 5, 6];
+// Log the reversed array to the console
+console.log(reverseArray(sampleArray));
