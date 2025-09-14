@@ -106,6 +106,7 @@ function changeBackgroundColor() {
     setInterval(function () {
         // Apply a random color to the body background
         document.body.style.backgroundColor = getRandomHexColor();
+        document.getElementById("changeButton").style.backgroundColor = getRandomHexColor();
     }, 1000); // Change color every 1000ms = 1 second
 }
 
