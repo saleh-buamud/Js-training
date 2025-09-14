@@ -61,21 +61,64 @@
 // }
 // Improved variable naming and best practices for lines 62-74
 
-/**
- * Returns a new array with the elements reversed.
- * @param {Array} originalArray - The array to reverse.
- * @returns {Array} reversedArray - The reversed array.
- */
-function reverseArray(originalArray = []) {
-    const reversedArray = [];
+// /**
+//  * Returns a new array with the elements reversed.
+//  * @param {Array} originalArray - The array to reverse.
+//  * @returns {Array} reversedArray - The reversed array.
+//  */
+// function reverseArray(originalArray = []) {
+//     const reversedArray = [];
 
-    // Add each element to the beginning of the new array
-    for (let index = 0; index < originalArray.length; index++) {
-        reversedArray.unshift(originalArray[index]);
-    }
-    return reversedArray;
+//     // Add each element to the beginning of the new array
+//     for (let index = 0; index < originalArray.length; index++) {
+//         reversedArray.unshift(originalArray[index]);
+//     }
+//     return reversedArray;
+// }
+
+// const sampleArray = ['saleh', 1, 2, 3, 4, 5, 6];
+// // Log the reversed array to the console
+// console.log(reverseArray(sampleArray));
+
+// setTimeout(() => {
+//     console.log('Hello after 3 seconds');
+// }, 4000);
+
+// setTimeout(() => {
+//     console.log('Hello after 3 seconds');
+// }, 4000);
+
+
+// setInterval(() => {
+//     console.log('Hello after 2 seconds');
+// }, 2000);
+
+
+//document.body.style.backgroundColor = getRandomHexColor();
+
+// Get the button element by its ID and attach a click event listener
+document.getElementById("changeButton").addEventListener("click", function () {
+    changeBackgroundColor();
+});
+
+// Function to start changing the background color every second
+function changeBackgroundColor() {
+    setInterval(function () {
+        // Apply a random color to the body background
+        document.body.style.backgroundColor = getRandomHexColor();
+    }, 1000); // Change color every 1000ms = 1 second
 }
 
-const sampleArray = ['saleh', 1, 2, 3, 4, 5, 6];
-// Log the reversed array to the console
-console.log(reverseArray(sampleArray));
+// Function to generate a random HEX color
+function getRandomHexColor() {
+    const hexChars = '0123456789ABCDEF'; // All possible HEX characters
+    let color = '#'; // HEX color always starts with "#"
+
+    // Build a 6-character HEX code
+    for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * 16); // Random number from 0 to 15
+        color += hexChars[randomIndex]; // Pick a random HEX char and add it to color
+    }
+
+    return color; // Return the full HEX color (e.g., "#3F9A2C")
+}
