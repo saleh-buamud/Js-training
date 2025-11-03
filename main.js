@@ -22,9 +22,14 @@ console.log("Addition: " + sum);
 console.log("Subtraction: " + sub);
 console.log("Division: " + div);
 console.log("Modulus: " + mood);
-// Define input strings
-const greeting = "Hello";
-const subject = "World";
+
+// Get the content of elements with IDs 'greeting' and 'subject'
+var greeting = document.getElementById("greeting").innerHTML;
+var subject = document.getElementById("subject").innerHTML;
+
+// Combine greeting and subject using simple concatenation
+var greetingsubject = greeting + " " + subject;
+console.log(greetingsubject);
 
 // Combine strings using a template literal to form a complete sentence
 let message = `${greeting} ${subject}`;
@@ -34,7 +39,7 @@ console.log("Original:", message);
 let upperMessage = message.toUpperCase();
 console.log("Uppercase String:", upperMessage);
 
-// Replace all occurrences of 'o' with 'y' in the first string only, 
+// Replace all occurrences of 'o' with 'y' in the first string only,
 // then combine with the second string and convert to uppercase
 let replaced = greeting.replaceAll('o', 'y');
 let finalResult = `${replaced} ${subject}`.toUpperCase();
@@ -43,3 +48,13 @@ console.log("Final Result:", finalResult);
 // Reverse the final string character by character
 finalResult = [...finalResult].reverse().join("");
 console.log(finalResult); // Display the reversed string
+
+// Create a formatted string to display all versions of the message
+let p = `
+  Uppercase Message: ${upperMessage} <br>
+  Modified Message (o → y & Uppercase): ${finalResult} <br>
+  Reversed Message: ${finalResult}
+`;
+
+// Display the formatted string inside the element with ID 'combined'
+document.getElementById("combined").innerHTML = p;
