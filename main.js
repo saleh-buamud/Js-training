@@ -22,3 +22,24 @@ console.log("Addition: " + sum);
 console.log("Subtraction: " + sub);
 console.log("Division: " + div);
 console.log("Modulus: " + mood);
+// Define input strings
+const greeting = "Hello";
+const subject = "World";
+
+// Combine strings using a template literal to form a complete sentence
+let message = `${greeting} ${subject}`;
+console.log("Original:", message);
+
+// Convert the full message to uppercase
+let upperMessage = message.toUpperCase();
+console.log("Uppercase String:", upperMessage);
+
+// Replace all occurrences of 'o' with 'y' in the first string only, 
+// then combine with the second string and convert to uppercase
+let replaced = greeting.replaceAll('o', 'y');
+let finalResult = `${replaced} ${subject}`.toUpperCase();
+console.log("Final Result:", finalResult);
+
+// Reverse the final string character by character
+finalResult = [...finalResult].reverse().join("");
+console.log(finalResult); // Display the reversed string
