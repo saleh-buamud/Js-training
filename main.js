@@ -24,37 +24,38 @@ console.log("Division: " + div);
 console.log("Modulus: " + mood);
 
 // Get the content of elements with IDs 'greeting' and 'subject'
-var greeting = document.getElementById("greeting").innerHTML;
-var subject = document.getElementById("subject").innerHTML;
 
-// Combine greeting and subject using simple concatenation
-var greetingsubject = greeting + " " + subject;
-console.log(greetingsubject);
 
-// Combine strings using a template literal to form a complete sentence
-let message = `${greeting} ${subject}`;
-console.log("Original:", message);
+// Get the button element and attach a click event listener
+const button = document.getElementById("processBtn");
 
-// Convert the full message to uppercase
-let upperMessage = message.toUpperCase();
-console.log("Uppercase String:", upperMessage);
+button.addEventListener("click", function () {
+    // Get the input value and remove extra spaces
+    const inputText = document.getElementById("name").value.trim();
 
-// Replace all occurrences of 'o' with 'y' in the first string only,
-// then combine with the second string and convert to uppercase
-let replaced = greeting.replaceAll('o', 'y');
-let finalResult = `${replaced} ${subject}`.toUpperCase();
-console.log("Final Result:", finalResult);
+    // Check if the input is empty
+    if (!inputText) {
+        alert("Please enter some text!");
+        return;
+    }
 
-// Reverse the final string character by character
-finalResult = [...finalResult].reverse().join("");
-console.log(finalResult); // Display the reversed string
+    // Different versions of the text
+    const upperMessage = inputText.toUpperCase(); // Convert input to uppercase
+    const replacedMessage = inputText.replaceAll('o', 'y'); // Replace all 'o' characters with 'y'
+    const combinedMessage = `${upperMessage} ${replacedMessage}`; // Combine the two versions
+    const reversedMessage = [...combinedMessage].reverse().join(""); // Reverse the combined text
 
-// Create a formatted string to display all versions of the message
-let p = `
-  Uppercase Message: ${upperMessage} <br>
-  Modified Message (o → y & Uppercase): ${finalResult} <br>
-  Reversed Message: ${finalResult}
-`;
+    // Create formatted HTML string for displaying results
+    const outputHTML = `
+        <strong>Uppercase Message:</strong> ${upperMessage} <br>
+        <strong>Modified Message (o → y):</strong> ${replacedMessage} <br>
+        <strong>Combined Message:</strong> ${combinedMessage} <br>
+        <strong>Reversed Message:</strong> ${reversedMessage}
+    `;
 
-// Display the formatted string inside the element with ID 'combined'
-document.getElementById("combined").innerHTML = p;
+    // Display the results in the 'result' element
+    document.getElementById("result").innerHTML = outputHTML;
+
+    // Clear the input field after processing
+    document.getElementById("name").value = "";
+});
