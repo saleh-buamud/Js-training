@@ -1,33 +1,33 @@
-// Define two variables
-var num1 = 10;
-var num2 = 4;
+// // Define two variables
+// var num1 = 10;
+// var num2 = 4;
 
-// Perform basic arithmetic operations
-var mult = num1 * num2;  // Multiplication
-var sum = num1 + num2;   // Addition
-var sub = num1 - num2;   // Subtraction
-var div = num1 / num2;   // Division
-var mood = num1 % num2;  // Modulus (remainder)
+// // Perform basic arithmetic operations
+// var mult = num1 * num2;  // Multiplication
+// var sum = num1 + num2;   // Addition
+// var sub = num1 - num2;   // Subtraction
+// var div = num1 / num2;   // Division
+// var mood = num1 % num2;  // Modulus (remainder)
 
-// Display results inside HTML elements
-document.getElementById("outputmult").innerHTML = "<strong>Multiplication:</strong> " + mult;
-document.getElementById("outputsum").innerHTML = "<strong>Addition:</strong> " + sum;
-document.getElementById("outputsub").innerHTML = "<strong>Subtraction:</strong> " + sub;
-document.getElementById("outputdiv").innerHTML = "<strong>Division:</strong> " + div;
-document.getElementById("outputmood").innerHTML = "<strong>Modulus:</strong> " + mood;
+// // Display results inside HTML elements
+// document.getElementById("outputmult").innerHTML = "<strong>Multiplication:</strong> " + mult;
+// document.getElementById("outputsum").innerHTML = "<strong>Addition:</strong> " + sum;
+// document.getElementById("outputsub").innerHTML = "<strong>Subtraction:</strong> " + sub;
+// document.getElementById("outputdiv").innerHTML = "<strong>Division:</strong> " + div;
+// document.getElementById("outputmood").innerHTML = "<strong>Modulus:</strong> " + mood;
 
-// Log results in the console for debugging
-console.log("Multiplication: " + mult);
-console.log("Addition: " + sum);
-console.log("Subtraction: " + sub);
-console.log("Division: " + div);
-console.log("Modulus: " + mood);
+// // Log results in the console for debugging
+// console.log("Multiplication: " + mult);
+// console.log("Addition: " + sum);
+// console.log("Subtraction: " + sub);
+// console.log("Division: " + div);
+// console.log("Modulus: " + mood);
 
-// Get the content of elements with IDs 'greeting' and 'subject'
+// // Get the content of elements with IDs 'greeting' and 'subject'
 
 
-// Get the button element and attach a click event listener
-const button = document.getElementById("processBtn");
+// // Get the button element and attach a click event listener
+// const button = document.getElementById("processBtn");
 
 // button.addEventListener("click", function () {
 //     // Get the input value and remove extra spaces
@@ -88,55 +88,90 @@ const button = document.getElementById("processBtn");
 
 
 // Get references to DOM elements
-const nameInputEl = document.getElementById("nameInput");
-const namesListEl = document.getElementById("namesList");
-const addBtn = document.getElementById("addNameBtn");
-const deleteBtn = document.getElementById("deleteNamesBtn");
+// const nameInputEl = document.getElementById("nameInput");
+// const namesListEl = document.getElementById("namesList");
+// const addBtn = document.getElementById("addNameBtn");
+// const deleteBtn = document.getElementById("deleteNamesBtn");
 
-// Array to store the list of names
-let names = [];
+// // Array to store the list of names
+// let names = [];
 
-// Function to update the display of names in the HTML
-function updateList() {
-    namesListEl.innerHTML = names.join(" , ");
-}
+// // Function to update the display of names in the HTML
+// function updateList() {
+//     namesListEl.innerHTML = names.join(" , ");
+// }
 
-// Add click event listener to the Add button
-addBtn.addEventListener("click", function () {
-    // Get and trim the input value
-    const nameInput = nameInputEl.value.trim();
+// // Add click event listener to the Add button
+// addBtn.addEventListener("click", function () {
+//     // Get and trim the input value
+//     const nameInput = nameInputEl.value.trim();
 
-    // Check if input is empty
-    if (nameInput === "") {
-        alert("Please enter a name!");
+//     // Check if input is empty
+//     if (nameInput === "") {
+//         alert("Please enter a name!");
+//         return;
+//     }
+
+//     // Add the new name to array
+//     names.push(nameInput);
+
+//     // Update the display
+//     updateList();
+
+//     // Log names array for debugging
+//     console.log(names);
+
+//     // Clear the input field
+//     nameInputEl.value = "";
+// });
+
+// // Add click event listener to the Delete button
+// deleteBtn.addEventListener("click", function () {
+//     // Check if names array is empty
+//     if (names.length === 0) {
+//         alert("No names to delete!");
+//         return;
+//     }
+
+//     // Remove the last name from array
+//     names.pop();
+
+//     // Update the display
+//     updateList();
+// });
+
+//A, E, I, O, U
+
+document.getElementById("addtext").addEventListener("click", function () {
+    // Get the user input and trim whitespace
+    const inputText = document.getElementById("text-input").value.trim();
+
+    // Define vowels in uppercase for case-insensitive comparison
+    const vowels = ['A', 'E', 'I', 'O', 'U'];
+
+    // Reference to the element where non-vowel characters will be shown
+    const showEl = document.getElementById("show");
+
+    // If the input is empty, notify the user and stop processing
+    if (inputText === "") {
+        alert("Please enter a letter or word!");
         return;
     }
 
-    // Add the new name to array
-    names.push(nameInput);
+    // Clear any previous results before rendering new output
+    showEl.innerHTML = "";
 
-    // Update the display
-    updateList();
+    // Loop through each character in the input
+    for (let i = 0; i < inputText.length; i++) {
+        // Normalize current character to uppercase for comparison
+        const currentChar = inputText[i].toUpperCase();
 
-    // Log names array for debugging
-    console.log(names);
-
-    // Clear the input field
-    nameInputEl.value = "";
-});
-
-// Add click event listener to the Delete button
-deleteBtn.addEventListener("click", function () {
-    // Check if names array is empty
-    if (names.length === 0) {
-        alert("No names to delete!");
-        return;
+        // If the character is not a vowel, append it to the result container
+        if (!vowels.includes(currentChar)) {
+            showEl.innerHTML += `<div style="color:red;">${currentChar}</div>`;
+        }
     }
 
-    // Remove the last name from array
-    names.pop();
-
-    // Update the display
-    updateList();
+    // Clear the input field after processing
+    document.getElementById("text-input").value = "";
 });
-
