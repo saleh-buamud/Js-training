@@ -29,59 +29,114 @@ console.log("Modulus: " + mood);
 // Get the button element and attach a click event listener
 const button = document.getElementById("processBtn");
 
-button.addEventListener("click", function () {
-    // Get the input value and remove extra spaces
-    const inputText = document.getElementById("name").value.trim();
+// button.addEventListener("click", function () {
+//     // Get the input value and remove extra spaces
+//     const inputText = document.getElementById("name").value.trim();
 
-    // Check if the input is empty
-    if (!inputText) {
-        alert("Please enter some text!");
+//     // Check if the input is empty
+//     if (!inputText) {
+//         alert("Please enter some text!");
+//         return;
+//     }
+
+//     // Different versions of the text
+//     const upperMessage = inputText.toUpperCase(); // Convert input to uppercase
+//     const replacedMessage = inputText.replaceAll('o', 'y'); // Replace all 'o' characters with 'y'
+//     const combinedMessage = `${upperMessage} ${replacedMessage}`; // Combine the two versions
+//     const reversedMessage = [...combinedMessage].reverse().join(""); // Reverse the combined text
+
+//     // Create formatted HTML string for displaying results
+//     const outputHTML = `
+//         <strong>Uppercase Message:</strong> ${upperMessage} <br>
+//         <strong>Modified Message (o → y):</strong> ${replacedMessage} <br>
+//         <strong>Combined Message:</strong> ${combinedMessage} <br>
+//         <strong>Reversed Message:</strong> ${reversedMessage}
+//     `;
+
+//     // Display the results in the 'result' element
+//     document.getElementById("result").innerHTML = outputHTML;
+
+//     // Clear the input field after processing
+//     document.getElementById("name").value = "";
+// });
+
+
+// document.getElementById("Btn").addEventListener("click", function (event) {
+//     event.preventDefault(); // Prevent form submission
+
+//     const weight = parseFloat(document.getElementById("weight").value);
+//     const height = parseFloat(document.getElementById("height").value);
+
+//     if (!weight || !height || weight <= 0 || height <= 0) {
+//         alert("Please enter valid positive numbers for weight and height.");
+//         return;
+//     }
+
+//     const heightM = height / 100;
+//     const BMI = (weight / (heightM * heightM)).toFixed(2);
+
+//     // Determine BMI category
+//     let category = "";
+//     if (BMI < 18.5) category = "Underweight";
+//     else if (BMI < 25) category = "Normal weight";
+//     else if (BMI < 30) category = "Overweight";
+//     else category = "Obese";
+
+//     document.getElementById("bmiResult").innerHTML =
+//         `Your BMI is: <strong>${BMI}</strong> (${category})`;
+// });
+
+
+// Get references to DOM elements
+const nameInputEl = document.getElementById("nameInput");
+const namesListEl = document.getElementById("namesList");
+const addBtn = document.getElementById("addNameBtn");
+const deleteBtn = document.getElementById("deleteNamesBtn");
+
+// Array to store the list of names
+let names = [];
+
+// Function to update the display of names in the HTML
+function updateList() {
+    namesListEl.innerHTML = names.join(" , ");
+}
+
+// Add click event listener to the Add button
+addBtn.addEventListener("click", function () {
+    // Get and trim the input value
+    const nameInput = nameInputEl.value.trim();
+
+    // Check if input is empty
+    if (nameInput === "") {
+        alert("Please enter a name!");
         return;
     }
 
-    // Different versions of the text
-    const upperMessage = inputText.toUpperCase(); // Convert input to uppercase
-    const replacedMessage = inputText.replaceAll('o', 'y'); // Replace all 'o' characters with 'y'
-    const combinedMessage = `${upperMessage} ${replacedMessage}`; // Combine the two versions
-    const reversedMessage = [...combinedMessage].reverse().join(""); // Reverse the combined text
+    // Add the new name to array
+    names.push(nameInput);
 
-    // Create formatted HTML string for displaying results
-    const outputHTML = `
-        <strong>Uppercase Message:</strong> ${upperMessage} <br>
-        <strong>Modified Message (o → y):</strong> ${replacedMessage} <br>
-        <strong>Combined Message:</strong> ${combinedMessage} <br>
-        <strong>Reversed Message:</strong> ${reversedMessage}
-    `;
+    // Update the display
+    updateList();
 
-    // Display the results in the 'result' element
-    document.getElementById("result").innerHTML = outputHTML;
+    // Log names array for debugging
+    console.log(names);
 
-    // Clear the input field after processing
-    document.getElementById("name").value = "";
+    // Clear the input field
+    nameInputEl.value = "";
 });
 
-
-document.getElementById("Btn").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    const weight = parseFloat(document.getElementById("weight").value);
-    const height = parseFloat(document.getElementById("height").value);
-
-    if (!weight || !height || weight <= 0 || height <= 0) {
-        alert("Please enter valid positive numbers for weight and height.");
+// Add click event listener to the Delete button
+deleteBtn.addEventListener("click", function () {
+    // Check if names array is empty
+    if (names.length === 0) {
+        alert("No names to delete!");
         return;
     }
 
-    const heightM = height / 100;
-    const BMI = (weight / (heightM * heightM)).toFixed(2);
+    // Remove the last name from array
+    names.pop();
 
-    // Determine BMI category
-    let category = "";
-    if (BMI < 18.5) category = "Underweight";
-    else if (BMI < 25) category = "Normal weight";
-    else if (BMI < 30) category = "Overweight";
-    else category = "Obese";
-
-    document.getElementById("bmiResult").innerHTML =
-        `Your BMI is: <strong>${BMI}</strong> (${category})`;
+    // Update the display
+    updateList();
 });
+
