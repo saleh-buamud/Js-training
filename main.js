@@ -173,34 +173,71 @@
 //     document.getElementById("text-input").value = "";
 // });
 
-let students = ['Ahmed', 'Sayed', 'Eman', 'Mahmoud', 'Ameer'];
+// let students = ['Ahmed', 'Sayed', 'Eman', 'Mahmoud', 'Ameer'];
 
-document.getElementById("addStudent").addEventListener("click", function (e) {
-    e.preventDefault();
+// document.getElementById("addStudent").addEventListener("click", function (e) {
+//     e.preventDefault();
 
-    let studentInput = document.getElementById("studentName").value.trim();
-    let studentsList = document.getElementById("studentsList");
+//     let studentInput = document.getElementById("studentName").value.trim();
+//     let studentsList = document.getElementById("studentsList");
 
-    if (!studentInput) {
-        studentsList.innerHTML = "⚠️ Please enter a student name!";
-        return;
+//     if (!studentInput) {
+//         studentsList.innerHTML = "⚠️ Please enter a student name!";
+//         return;
+//     }
+
+//     let studentUpper = studentInput.toUpperCase();
+//     let isFound = false; // ✅ Boolean variable to track existence
+
+//     for (let i = 0; i < students.length; i++) {
+//         if (studentUpper === students[i].toUpperCase()) {
+//             isFound = true;
+//             break; // Stop loop once found
+//         }
+//     }
+
+//     if (isFound) {
+//         console.log("✅ exists " + studentInput);
+//         studentsList.innerHTML = `❌ Student "${studentInput}" already exists!`;
+//     } else {
+//         console.log("🆕 not exists " + studentInput);
+//         studentsList.innerHTML = `🎉 Student "${studentInput}" is NOT in the list yet!`;
+//     }
+// });
+
+// let stu = document.getElementById("studentsList");
+// let students = [
+//     ['Ahmed', 20],
+//     ['Sayed', 22],
+//     ['Eman', 19],
+//     ['Mahmoud', 21],
+//     ['Ameer', 23]
+// ];
+
+// for (let i = 0; i < students.length; i++) {
+//     for (let j = 0; j < students[i].length; j++) {
+//         stu.innerHTML += ` ${students[i][j]} `;
+//     }
+//     stu.innerHTML += "<br>";
+// }
+
+
+
+function reverseArray(array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+    let newArray = [];
+
+    for (let i = array.length - 1; i >= 0; i--) {
+        newArray.push(array[i]);
     }
 
-    let studentUpper = studentInput.toUpperCase();
-    let isFound = false; // ✅ Boolean variable to track existence
+    return newArray;
+}
 
-    for (let i = 0; i < students.length; i++) {
-        if (studentUpper === students[i].toUpperCase()) {
-            isFound = true;
-            break; // Stop loop once found
-        }
-    }
-
-    if (isFound) {
-        console.log("✅ exists " + studentInput);
-        studentsList.innerHTML = `❌ Student "${studentInput}" already exists!`;
-    } else {
-        console.log("🆕 not exists " + studentInput);
-        studentsList.innerHTML = `🎉 Student "${studentInput}" is NOT in the list yet!`;
-    }
-});
+let array = [10, 'test', 7, true, 5];
+console.log("Before:", array);
+console.log("After:", reverseArray(array));
+console.log("Original still intact:", array);
+// Output:
+// Before: [10, 'test', 7, true, 5]
+// After: [5, true, 7, 'test', 10]
+// Original still intact: [10, 'test', 7, true, 5]
