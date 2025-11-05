@@ -142,36 +142,58 @@
 
 //A, E, I, O, U
 
-document.getElementById("addtext").addEventListener("click", function () {
-    // Get the user input and trim whitespace
-    const inputText = document.getElementById("text-input").value.trim();
+// document.getElementById("addtext").addEventListener("click", function () {
+//     // Get the user input and trim whitespace
+//     const inputText = document.getElementById("text-input").value.trim();
+//     // Define vowels in uppercase for case-insensitive comparison
+//     const vowels = ['A', 'E', 'I', 'O', 'U'];
 
-    // Define vowels in uppercase for case-insensitive comparison
-    const vowels = ['A', 'E', 'I', 'O', 'U'];
+//     // Reference to the element where non-vowel characters will be shown
+//     const showEl = document.getElementById("show");
 
-    // Reference to the element where non-vowel characters will be shown
-    const showEl = document.getElementById("show");
+//     // If the input is empty, notify the user and stop processing
+//     if (inputText === "") {
+//         alert("Please enter a letter or word!");
+//         return;
+//     }
 
-    // If the input is empty, notify the user and stop processing
-    if (inputText === "") {
-        alert("Please enter a letter or word!");
+//     // Clear any previous results before rendering new output
+//     showEl.innerHTML = "";
+
+//     // Loop through each character in the input
+//     for (let i = 0; i < inputText.length; i++) {
+
+//         // If the character is not a vowel, append it to the result container
+//         if (!vowels.includes(currentChar)) {
+//             showEl.innerHTML += `<div style="color:red;">${currentChar}</div>`;
+//         }
+//     }
+
+//     // Clear the input field after processing
+//     document.getElementById("text-input").value = "";
+// });
+
+let students = ['Ahmed', 'Sayed', 'Eman', 'Mahmoud', 'Ameer'];
+
+document.getElementById("addStudent").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    let studentInput = document.getElementById("studentName").value.trim();
+    if (!studentInput) {
+        document.getElementById("studentsList").innerHTML = "⚠️ Please enter a student name!";
         return;
     }
 
-    // Clear any previous results before rendering new output
-    showEl.innerHTML = "";
+    let studentUpper = studentInput.toUpperCase();
 
-    // Loop through each character in the input
-    for (let i = 0; i < inputText.length; i++) {
-        // Normalize current character to uppercase for comparison
-        const currentChar = inputText[i].toUpperCase();
-
-        // If the character is not a vowel, append it to the result container
-        if (!vowels.includes(currentChar)) {
-            showEl.innerHTML += `<div style="color:red;">${currentChar}</div>`;
+    for (let i = 0; i < students.length; i++) {
+        if (studentUpper === students[i].toUpperCase()) {
+            console.log("✅ exists " + students[i]);
+            document.getElementById("studentsList").innerHTML = `❌ Student "${students[i]}" already exists!`;
+            return;
         }
     }
 
-    // Clear the input field after processing
-    document.getElementById("text-input").value = "";
+    console.log("🆕 not exists " + studentUpper);
+    document.getElementById("studentsList").innerHTML = `🎉 Student "${studentInput}" is NOT in the list yet!`;
 });
