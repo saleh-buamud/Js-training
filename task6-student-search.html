@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <!-- Task 6: Student Search - Search for a student in a predefined list -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Search - المهمة 6</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f8fa;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #studentsList {
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 20px auto;
+      background: white;
+      min-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Student Search - البحث عن طالب</h1>
+  <form>
+    <input type="text" id="studentName" placeholder="Enter student name">
+    <button id="addStudent">Search student</button>
+  </form>
+  <div id="studentsList" style="width: 300px; border: 1px solid #ccc; padding: 10px; border-radius: 6px; margin: 20px auto;"></div>
+
+  <script src="task6-student-search.js"></script>
+</body>
+
+</html>
+

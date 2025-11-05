@@ -1,110 +1,183 @@
-# JavaScript Learning Progress - Tarmiz Academy
+# JavaScript Training Tasks
 
-This repository documents my progress while studying **JavaScript** from **Tarmiz Academy**.  
-The following lessons have been completed with their respective assignments and hands-on coding practice.
-
----
-
-## 📘 Completed Lessons
-
-### 🧰 Section 1: Environment Setup
-- **Lesson 2:** Setting up the working environment and starting with JavaScript  
-  ✅ *Task:* Create a simple `index.html` and link an external `script.js` file. Print “Hello JavaScript” in the console.
+This repository contains JavaScript training tasks separated into individual files. Each task demonstrates different JavaScript concepts and DOM manipulation techniques.
 
 ---
 
-### 💡 Section 2: Variables and Basic Operations
-- **Lesson 3:** Variables in JavaScript  
-- **Lesson 4:** Naming and handling variables  
-- **Lesson 5:** Mathematical operations on variables  
-- **Lesson 5.1:** Variable Challenge (1)  
-- **Lesson 5.2:** Variable Challenge (1) Solution + Extra Challenge  
-- **Lesson 5.3:** Variable Challenge (2) – Connecting JavaScript with HTML  
+## 📋 Tasks Overview
 
-✅ *Tasks:*
-1. Declare different types of variables (`let`, `const`, `var`) and experiment with reassignments.  
-2. Create a program that calculates the total and average of three numbers.  
-3. Build a small interactive HTML page showing the result of variable operations using JavaScript.
+### Task 1: Calculator - Basic Arithmetic Operations
+**Files:** `task1-calculator.html`, `task1-calculator.js`
 
----
+**Description:**  
+This task performs basic arithmetic operations (addition, subtraction, multiplication, division, and modulus) on two predefined numbers. The results are displayed in HTML elements and logged to the console.
 
-### 🔢 Section 3: Data Types and Strings
-- **Lesson 6:** Data types in JavaScript  
-- **Lesson 7:** Strings in JavaScript (Part 1)  
-- **Lesson 8:** Strings in JavaScript (Part 2)  
-- **Lesson 8.1:** String Challenge  
-- **Lesson 8.2:** String Challenge Solution + Extra Challenge  
-- **Lesson 8.3:** Extra String Challenge Solution  
-- **Lesson 8.4:** Reading input from user  
-
-✅ *Tasks:*
-1. Practice identifying and converting between data types.  
-2. Write functions that manipulate strings (concatenation, length, index, etc.).  
-3. Build a small input form that takes user input and displays formatted text.
+**Concepts:**
+- Variables declaration
+- Arithmetic operators (+, -, *, /, %)
+- DOM manipulation
+- Console logging
 
 ---
 
-### 🔣 Section 4: Numbers, Booleans, and Logic
-- **Lesson 9:** Numbers in JavaScript  
-- **Lesson 10:** Booleans in JavaScript  
-- **Lesson 11:** Logical Operators  
-- **Lesson 12:** Comments  
-- **Lesson 13:** Type Casting in JavaScript  
+### Task 2: Text Processing - Transform Text
+**Files:** `task2-text-processing.html`, `task2-text-processing.js`
 
-✅ *Tasks:*
-1. Create a script that compares numbers using logical operators.  
-2. Write a function that takes two numbers and returns whether both are positive.  
-3. Comment your code properly to describe logic clearly.
+**Description:**  
+This task processes user input text and applies various transformations: converting to uppercase, replacing characters, combining strings, and reversing the text. Results are displayed in HTML.
 
----
-
-### ⚙️ Section 5: Conditional Statements
-- **Lesson 14:** Conditional Statements (`if`, `else`)  
-- **Lesson 15:** Multiple Conditional Statements  
-- **Lesson 16:** `switch-case` Statements  
-- **Lesson 17:** Converting `if` to `switch`  
-- **Lesson 17.1:** BMI Challenge  
-- **Lesson 17.2:** BMI Challenge Solution  
-
-✅ *Tasks:*
-1. Create a BMI calculator using both `if` and `switch`.  
-2. Build a grading system that outputs letter grades based on numeric scores.  
-3. Practice nested `if` structures with multiple conditions.
+**Concepts:**
+- Event listeners
+- String methods (toUpperCase, replaceAll)
+- Template literals
+- Array methods (reverse, join)
 
 ---
 
-### 🧮 Section 6: Arrays
-- **Lesson 18:** Arrays in JavaScript  
-- **Lesson 19:** Array Operations (Part 1)  
-- **Lesson 20:** Array Operations (Part 2)  
+### Task 3: BMI Calculator
+**Files:** `task3-bmi-calculator.html`, `task3-bmi-calculator.js`
 
-✅ *Tasks:*
-1. Create an array of numbers and calculate their sum using a `for` loop.  
-2. Write functions to `add`, `remove`, and `update` items in an array.  
-3. Display the contents of an array dynamically in an HTML list.
+**Description:**  
+This task calculates Body Mass Index (BMI) from user input (weight in kg and height in cm). It then categorizes the result as Underweight, Normal weight, Overweight, or Obese.
 
----
-
-## 🚀 Upcoming Topics
-Next, I will continue with:
-- Array Challenges  
-- Loops (for, while, nested)  
-- Functions and DOM manipulation  
+**Concepts:**
+- Form handling
+- Input validation
+- Conditional statements (if-else)
+- Mathematical calculations
+- Event prevention (preventDefault)
 
 ---
 
-## 🧠 Learning Notes
-- Practiced writing JavaScript code daily using **VS Code**.  
-- Tested all examples in **browser console** for better understanding.  
-- Followed each challenge with self-written solutions before watching the tutorial.
+### Task 4: Names List - Add and Delete Names
+**Files:** `task4-names-list.html`, `task4-names-list.js`
+
+**Description:**  
+This task manages a dynamic list of names. Users can add names to an array and delete the last name. The list is displayed and updated in real-time.
+
+**Concepts:**
+- Array operations (push, pop)
+- Dynamic DOM updates
+- Event handling
+- Array methods (join)
 
 ---
 
-## 🏁 Status
-✅ Completed Lessons: **2 → 20**  
-🕓 Current Focus: Strengthening fundamentals and preparing for loops section.
+### Task 5: Vowel Filter
+**Files:** `task5-vowel-filter.html`, `task5-vowel-filter.js`
+
+**Description:**  
+This task filters out vowels (A, E, I, O, U) from user input text and displays only the consonants. The filtering is case-insensitive.
+
+**Concepts:**
+- String iteration
+- Conditional filtering
+- Array methods (includes)
+- Case-insensitive comparison
 
 ---
 
-**Author:** Saleh  
-**Learning Source:** [Tarmiz Academy - JavaScript Course](https://www.youtube.com/@TarmizAcademy)
+### Task 6: Student Search
+**Files:** `task6-student-search.html`, `task6-student-search.js`
+
+**Description:**  
+This task searches for a student name in a predefined array. It checks if the entered name exists in the list and displays an appropriate message. The search is case-insensitive.
+
+**Concepts:**
+- Array searching
+- Loop iteration
+- Case-insensitive comparison
+- Boolean flags
+- Conditional rendering
+
+---
+
+### Task 7: Students Array Display
+**Files:** `task7-students-array.html`, `task7-students-array.js`
+
+**Description:**  
+This task displays a 2D array (nested array) containing student names and their ages. It uses nested loops to iterate through the array and display each student's information.
+
+**Concepts:**
+- 2D arrays (nested arrays)
+- Nested loops
+- Array iteration
+- HTML content manipulation
+
+---
+
+### Task 8: Reverse Array Function
+**Files:** `task8-reverse-array.js`
+
+**Description:**  
+This task implements a function that manually reverses an array without using the built-in `reverse()` method. It loops through the array from end to start and creates a new reversed array.
+
+**Concepts:**
+- Function creation
+- Array manipulation
+- Looping backwards
+- Array methods (push)
+- Default parameters
+
+**Note:** This task works with the browser console and doesn't require an HTML file.
+
+---
+
+## 🚀 How to Use
+
+1. Open any task HTML file in a web browser
+2. For tasks 1-7: Interact with the page to see the functionality
+3. For task 8: Open the browser console to see the function output
+
+## 📁 File Structure
+
+```
+Js-training/
+├── task1-calculator.html
+├── task1-calculator.js
+├── task2-text-processing.html
+├── task2-text-processing.js
+├── task3-bmi-calculator.html
+├── task3-bmi-calculator.js
+├── task4-names-list.html
+├── task4-names-list.js
+├── task5-vowel-filter.html
+├── task5-vowel-filter.js
+├── task6-student-search.html
+├── task6-student-search.js
+├── task7-students-array.html
+├── task7-students-array.js
+├── task8-reverse-array.js
+├── README.md
+└── css/
+    └── master.css
+```
+
+---
+
+## 🎯 Learning Objectives
+
+These tasks cover:
+- Basic JavaScript syntax and operators
+- DOM manipulation
+- Event handling
+- Array operations
+- String manipulation
+- Conditional statements
+- Loops and iterations
+- Function creation
+- Form validation
+
+---
+
+## 📝 Notes
+
+- All tasks are standalone and can be run independently
+- Each task has clear comments explaining the code
+- Tasks are designed for learning JavaScript fundamentals
+- HTML files include basic styling for better presentation
+
+---
+
+**Created for:** JavaScript Training Practice  
+**Purpose:** Learning JavaScript basics and DOM manipulation

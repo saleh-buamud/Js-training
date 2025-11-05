@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <!-- Task 4: Names List - Add and delete names from a list -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Names List - المهمة 4</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f8fa;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      margin: 8px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #namesList {
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 20px auto;
+      background: white;
+      min-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Names List - قائمة الأسماء</h1>
+  <form action="#">
+    <label for="nameInput">Add name</label>
+    <input type="text" placeholder="Enter name" id="nameInput">
+    <button id="addNameBtn">Add Name</button>
+    <button id="deleteNamesBtn">Delete Names</button>
+  </form>
+  <div id="namesList"></div>
+
+  <script src="task4-names-list.js"></script>
+</body>
+
+</html>
+
