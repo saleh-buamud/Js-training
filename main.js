@@ -222,22 +222,32 @@
 // }
 
 
-
+/**
+ * Function to reverse an array manually without using built-in reverse()
+ * @param {Array} array - The original array to reverse
+ * @returns {Array} - New array with elements in reverse order
+ */
 function reverseArray(array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
-    let newArray = [];
+    // Create a new array to hold reversed elements
+    let reversedArray = [];
 
+    // Loop through the original array from end to start
     for (let i = array.length - 1; i >= 0; i--) {
-        newArray.push(array[i]);
+        reversedArray.push(array[i]);
     }
 
-    return newArray;
+    return reversedArray;
 }
 
+// Example usage:
 let array = [10, 'test', 7, true, 5];
-console.log("Before:", array);
-console.log("After:", reverseArray(array));
-console.log("Original still intact:", array);
-// Output:
-// Before: [10, 'test', 7, true, 5]
-// After: [5, true, 7, 'test', 10]
-// Original still intact: [10, 'test', 7, true, 5]
+
+console.log("Original Array:", array);
+console.log("Reversed Array:", reverseArray(array));
+console.log("Original Array remains intact:", array);
+
+/* Output:
+Original Array: [10, 'test', 7, true, 5]
+Reversed Array: [5, true, 7, 'test', 10]
+Original Array remains intact: [10, 'test', 7, true, 5]
+*/
