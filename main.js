@@ -179,21 +179,28 @@ document.getElementById("addStudent").addEventListener("click", function (e) {
     e.preventDefault();
 
     let studentInput = document.getElementById("studentName").value.trim();
+    let studentsList = document.getElementById("studentsList");
+
     if (!studentInput) {
-        document.getElementById("studentsList").innerHTML = "⚠️ Please enter a student name!";
+        studentsList.innerHTML = "⚠️ Please enter a student name!";
         return;
     }
 
     let studentUpper = studentInput.toUpperCase();
+    let isFound = false; // ✅ Boolean variable to track existence
 
     for (let i = 0; i < students.length; i++) {
         if (studentUpper === students[i].toUpperCase()) {
-            console.log("✅ exists " + students[i]);
-            document.getElementById("studentsList").innerHTML = `❌ Student "${students[i]}" already exists!`;
-            return;
+            isFound = true;
+            break; // Stop loop once found
         }
     }
 
-    console.log("🆕 not exists " + studentUpper);
-    document.getElementById("studentsList").innerHTML = `🎉 Student "${studentInput}" is NOT in the list yet!`;
+    if (isFound) {
+        console.log("✅ exists " + studentInput);
+        studentsList.innerHTML = `❌ Student "${studentInput}" already exists!`;
+    } else {
+        console.log("🆕 not exists " + studentInput);
+        studentsList.innerHTML = `🎉 Student "${studentInput}" is NOT in the list yet!`;
+    }
 });
