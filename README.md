@@ -7,6 +7,7 @@ This repository contains JavaScript training tasks separated into individual fil
 ## 📋 Tasks Overview
 
 ### Task 1: Calculator - Basic Arithmetic Operations
+**Location:** `task1/`  
 **Files:** `task1-calculator.html`, `task1-calculator.js`
 
 **Description:**  
@@ -21,6 +22,7 @@ This task performs basic arithmetic operations (addition, subtraction, multiplic
 ---
 
 ### Task 2: Text Processing - Transform Text
+**Location:** `task2/`  
 **Files:** `task2-text-processing.html`, `task2-text-processing.js`
 
 **Description:**  
@@ -35,6 +37,7 @@ This task processes user input text and applies various transformations: convert
 ---
 
 ### Task 3: BMI Calculator
+**Location:** `task3/`  
 **Files:** `task3-bmi-calculator.html`, `task3-bmi-calculator.js`
 
 **Description:**  
@@ -50,6 +53,7 @@ This task calculates Body Mass Index (BMI) from user input (weight in kg and hei
 ---
 
 ### Task 4: Names List - Add and Delete Names
+**Location:** `task4/`  
 **Files:** `task4-names-list.html`, `task4-names-list.js`
 
 **Description:**  
@@ -64,6 +68,7 @@ This task manages a dynamic list of names. Users can add names to an array and d
 ---
 
 ### Task 5: Vowel Filter
+**Location:** `task5/`  
 **Files:** `task5-vowel-filter.html`, `task5-vowel-filter.js`
 
 **Description:**  
@@ -78,6 +83,7 @@ This task filters out vowels (A, E, I, O, U) from user input text and displays o
 ---
 
 ### Task 6: Student Search
+**Location:** `task6/`  
 **Files:** `task6-student-search.html`, `task6-student-search.js`
 
 **Description:**  
@@ -93,6 +99,7 @@ This task searches for a student name in a predefined array. It checks if the en
 ---
 
 ### Task 7: Students Array Display
+**Location:** `task7/`  
 **Files:** `task7-students-array.html`, `task7-students-array.js`
 
 **Description:**  
@@ -107,6 +114,7 @@ This task displays a 2D array (nested array) containing student names and their 
 ---
 
 ### Task 8: Reverse Array Function
+**Location:** `task8/`  
 **Files:** `task8-reverse-array.js`
 
 **Description:**  
@@ -124,6 +132,7 @@ This task implements a function that manually reverses an array without using th
 ---
 
 ### Task 9: Students Table Display
+**Location:** `task9/`  
 **Files:** `task9-students-table.html`, `task9-students-table.js`
 
 **Description:**  
@@ -139,6 +148,7 @@ This task displays an array of student objects (with name, age, and grade) in an
 ---
 
 ### Task 10: Random Background Color Changer
+**Location:** `task10/`  
 **Files:** `task10-color-changer.html`, `task10-color-changer.js`
 
 **Description:**  
@@ -156,33 +166,44 @@ This task creates an interactive color changer that randomly changes the backgro
 
 ## 🚀 How to Use
 
-1. Open any task HTML file in a web browser
-2. For tasks 1-7, 9-10: Interact with the page to see the functionality
-3. For task 8: Open the browser console to see the function output
+1. Navigate to any task folder (e.g., `task1/`, `task2/`, etc.)
+2. Open the HTML file in a web browser
+3. For tasks 1-7, 9-10: Interact with the page to see the functionality
+4. For task 8: Open the JavaScript file in a browser console or Node.js to see the function output
 
 ## 📁 File Structure
 
 ```
 Js-training/
-├── task1-calculator.html
-├── task1-calculator.js
-├── task2-text-processing.html
-├── task2-text-processing.js
-├── task3-bmi-calculator.html
-├── task3-bmi-calculator.js
-├── task4-names-list.html
-├── task4-names-list.js
-├── task5-vowel-filter.html
-├── task5-vowel-filter.js
-├── task6-student-search.html
-├── task6-student-search.js
-├── task7-students-array.html
-├── task7-students-array.js
-├── task8-reverse-array.js
-├── task9-students-table.html
-├── task9-students-table.js
-├── task10-color-changer.html
-├── task10-color-changer.js
+├── task1/
+│   ├── task1-calculator.html
+│   └── task1-calculator.js
+├── task2/
+│   ├── task2-text-processing.html
+│   └── task2-text-processing.js
+├── task3/
+│   ├── task3-bmi-calculator.html
+│   └── task3-bmi-calculator.js
+├── task4/
+│   ├── task4-names-list.html
+│   └── task4-names-list.js
+├── task5/
+│   ├── task5-vowel-filter.html
+│   └── task5-vowel-filter.js
+├── task6/
+│   ├── task6-student-search.html
+│   └── task6-student-search.js
+├── task7/
+│   ├── task7-students-array.html
+│   └── task7-students-array.js
+├── task8/
+│   └── task8-reverse-array.js
+├── task9/
+│   ├── task9-students-table.html
+│   └── task9-students-table.js
+├── task10/
+│   ├── task10-color-changer.html
+│   └── task10-color-changer.js
 ├── README.md
 └── css/
     └── master.css
