@@ -123,10 +123,41 @@ This task implements a function that manually reverses an array without using th
 
 ---
 
+### Task 9: Students Table Display
+**Files:** `task9-students-table.html`, `task9-students-table.js`
+
+**Description:**  
+This task displays an array of student objects (with name, age, and grade) in an HTML table. It uses the `forEach` method to iterate through the array and dynamically create table rows.
+
+**Concepts:**
+- Object arrays
+- forEach method
+- Dynamic HTML generation
+- Template literals
+- DOM manipulation (querySelector)
+
+---
+
+### Task 10: Random Background Color Changer
+**Files:** `task10-color-changer.html`, `task10-color-changer.js`
+
+**Description:**  
+This task creates an interactive color changer that randomly changes the background color every second when activated. Users can start and stop the color changing with a toggle button.
+
+**Concepts:**
+- setInterval and clearInterval
+- Random number generation
+- Color manipulation (HEX colors)
+- Event handling
+- Toggle functionality
+- CSS transitions
+
+---
+
 ## 🚀 How to Use
 
 1. Open any task HTML file in a web browser
-2. For tasks 1-7: Interact with the page to see the functionality
+2. For tasks 1-7, 9-10: Interact with the page to see the functionality
 3. For task 8: Open the browser console to see the function output
 
 ## 📁 File Structure
@@ -148,6 +179,10 @@ Js-training/
 ├── task7-students-array.html
 ├── task7-students-array.js
 ├── task8-reverse-array.js
+├── task9-students-table.html
+├── task9-students-table.js
+├── task10-color-changer.html
+├── task10-color-changer.js
 ├── README.md
 └── css/
     └── master.css
@@ -167,6 +202,10 @@ These tasks cover:
 - Loops and iterations
 - Function creation
 - Form validation
+- Object arrays and forEach
+- setInterval and clearInterval
+- Random number generation
+- Dynamic HTML generation
 
 ---
 

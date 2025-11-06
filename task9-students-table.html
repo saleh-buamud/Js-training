@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <!-- Task 9: Students Table Display - Display students data in a table -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students Table - المهمة 9</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f8fa;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      text-align: right;
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: right;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Students Table - جدول الطلاب</h1>
+  <div class="container">
+    <table id="studentsTable" cellpadding="10" cellspacing="0" border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be added here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="task9-students-table.js"></script>
+</body>
+
+</html>
+
