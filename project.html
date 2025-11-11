@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة المهام</title>
+
+    <!-- External CSS file for styling -->
+    <link rel="stylesheet" href="/css/project.css">
+
+    <!-- Google Font (Tajawal) for Arabic text -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Main page title -->
+    <h1>قائمة المهام</h1>
+
+    <!-- Button to create a new task -->
+    <button class="add-task">
+        <i class="fa-solid fa-plus"></i> إنشاء مهمة
+    </button>
+
+    <!-- Tasks table -->
+    <table>
+        <thead>
+            <tr>
+                <th>اسم المهمة</th>
+                <th>تاريخ المهمة</th>
+                <th>إنجاز المهمة</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+
+        <!-- Table body where tasks will be added dynamically via JavaScript -->
+        <tbody id="tbody">
+            <tr></tr>
+        </tbody>
+    </table>
+
+    <!-- JavaScript file that handles dynamic task rendering -->
+    <script src="/main.js"></script>
+</body>
+
+</html>
