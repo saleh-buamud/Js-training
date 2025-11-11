@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Input Example - Task 12</title>
+    <style>
+        /* ...existing code... */
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .container-input {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #ff4e50;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .container-input input {
+            flex: 1;
+            height: 50px;
+            font-size: 18px;
+            padding: 0 15px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .container-input button {
+            height: 50px;
+            margin-left: 15px;
+            padding: 0 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #ff4e50;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .container-input button:hover {
+            background-color: #ff4e50;
+            color: #fff;
+        }
+
+        #show {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            min-height: 50px;
+            text-align: center;
+        }
+
+        #show p {
+            font-size: 36px;
+            color: #ff4e50;
+            margin-bottom: 10px;
+        }
+
+        #output {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #output h1 {
+            font-size: 40px;
+            color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        #output h1:hover {
+            background-color: #ff4e50;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Comment: Input container and submit button -->
+    <div class="container-input">
+        <input id="inputValue" type="text" placeholder="اكتب اسمك هنا..." aria-label="اسم المستخدم">
+        <!-- Added type="button" to avoid default form submit behavior -->
+        <button id="submitButton" type="button">إرسال</button>
+    </div>
+
+    <!-- Comment: Preview area for names -->
+    <div id="show"></div>
+
+    <!-- Comment: Output area for greetings -->
+    <div id="output">
+        <h1>الرجاء إدخال اسم</h1>
+    </div>
+
+    <!-- Comment: Link external JavaScript file for Task 12 -->
+    <script src="/task12/task12-dom-interaction.js"></script>
+</body>
+
+</html>
