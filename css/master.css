@@ -8,24 +8,22 @@ body {
 
 button {
     width: 180px;
-    /* عرض الزر */
     height: 60px;
-    /* ارتفاع الزر */
     border-radius: 18px;
-    /* يجعل الزوايا دائرية */
     border: none;
-    /* إزالة الإطار الخارجي */
     transition: all 0.3s ease-in-out;
-    /* تأثير سلس عند التغيير */
     font-size: medium;
 }
 
 button:hover {
     transition: all 0.3s ease-in-out;
-    /* نفس الانتقال عند التمرير */
+
     color: rgb(255, 0, 0);
-    /* يغيّر لون النص إلى الأبيض */
+
     font-size: larger;
     cursor: pointer;
-    /* يُظهر مؤشر اليد */
+
 }
+
+
+
