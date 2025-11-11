@@ -24,8 +24,21 @@ tasks.forEach(function (task) {
     // Fill each cell with the appropriate data
     nameCell.textContent = task.name; // Task name
     dateCell.textContent = task.date; // Task date
-    statusCell.textContent = task.isDone ? "منجزة ✅" : "غير منجزة ❌"; // Conditional status text
+    // Instead of plain text, create a status button
+    let statusButton = document.createElement("button");
 
+    // Set button text and style based on task status
+    if (task.isDone) {
+        statusButton.textContent = "منجزة ✅";
+        statusButton.classList.add("done"); // optional class for styling
+    } else {
+        statusButton.textContent = "غير منجزة ❌";
+        statusButton.classList.add("not-done"); // optional class for styling
+    }
+
+    // Add the button to the status cell
+    statusCell.innerHTML = ""; // clear existing content
+    statusCell.appendChild(statusButton);
     // Add edit and delete buttons
     actionCell.innerHTML = `
         <button class="edit">

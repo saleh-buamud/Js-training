@@ -105,3 +105,20 @@ tr:nth-child(even) {
     background-color: #a71d2a;
     /* Darker red on hover */
 }
+
+
+.done {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.not-done {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
