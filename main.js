@@ -2,31 +2,32 @@
 /** -----------------------------
  * Global App State
  ------------------------------ */
-// Central state for the app
 const state = {
-    tasks: [],         // Array to store all tasks
-    nextTaskId: 1      // Auto-incrementing ID for new tasks
+    tasks: [],
+    nextTaskId: 1
 };
 
 /** -----------------------------
  * DOM Elements
  ------------------------------ */
-// Cache important DOM elements
-const tableBody = document.querySelector("tbody");   // Table body to render tasks
-const addTaskBtn = document.getElementById("add-task"); // Button to add a new task
-const formContainer = document.getElementById("form"); // Container for task form
+const tableBody = document.querySelector("tbody");
+const addTaskBtn = document.getElementById("add-task");
+const formContainer = document.getElementById("form");
+
+// If any of these are null, script may run before DOM is ready
+if (!tableBody || !addTaskBtn || !formContainer) {
+    console.warn("One or more DOM elements are missing. Make sure the script runs after the HTML or wrap it in DOMContentLoaded.");
+}
 
 /** -----------------------------
  * Utility Functions
  ------------------------------ */
-// Create a DOM element with optional CSS classes
 function createElement(tag, classes = []) {
     const el = document.createElement(tag);
     classes.forEach(cls => el.classList.add(cls));
     return el;
 }
 
-// Clear and hide the form
 function clearForm() {
     formContainer.classList.remove("show");
     setTimeout(() => formContainer.innerHTML = "", 300);
@@ -35,7 +36,6 @@ function clearForm() {
 /** -----------------------------
  * Form Rendering
  ------------------------------ */
-// Render a task form (used for adding or editing tasks)
 function renderTaskForm(onSubmitCallback, task = null) {
     formContainer.innerHTML = `
         <form id="taskForm">
@@ -55,7 +55,6 @@ function renderTaskForm(onSubmitCallback, task = null) {
     `;
     formContainer.classList.add("show");
 
-    // Handle form submission
     document.getElementById("taskForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const data = {
@@ -63,74 +62,82 @@ function renderTaskForm(onSubmitCallback, task = null) {
             date: document.getElementById("taskDate").value,
             isDone: document.getElementById("taskDone").checked
         };
-        onSubmitCallback(data); // Call the callback (add or edit)
-        clearForm();            // Close and clear the form
+        onSubmitCallback(data);
+        clearForm();
     });
 }
 
 /** -----------------------------
  * CRUD Operations
  ------------------------------ */
-// Add a new task to the state
 function addTask(taskData) {
     const newTask = { id: state.nextTaskId++, ...taskData };
     state.tasks.push(newTask);
-    renderTasks(); // Refresh the table
-    alert(`Task "${newTask.name}" added successfully! ✅`); // Message for add
+    saveToLocalStorage();
+    renderTasks();
+    alert(`Task "${newTask.name}" added successfully! ✅`);
 }
 
-// Edit an existing task by ID
 function editTask(taskId) {
     const task = state.tasks.find(t => t.id === taskId);
     if (!task) return;
 
     renderTaskForm((updatedData) => {
-        Object.assign(task, updatedData); // Update task properties
-        renderTasks();                   // Refresh the table
-        alert(`Task "${task.name}" updated successfully! ✏️`); // Message for edit
+        Object.assign(task, updatedData);
+        saveToLocalStorage();
+        renderTasks();
+        alert(`Task "${task.name}" updated successfully! ✏️`);
     }, task);
 }
 
-// Delete a task by ID
 function deleteTask(taskId) {
     const task = state.tasks.find(t => t.id === taskId);
     state.tasks = state.tasks.filter(t => t.id !== taskId);
-    renderTasks(); // Refresh the table
-    if (task) alert(`Task "${task.name}" deleted! ❌`); // Message for delete
+    saveToLocalStorage();
+    renderTasks();
+    if (task) alert(`Task "${task.name}" deleted! ❌`);
 }
 
+function saveToLocalStorage() {
+    localStorage.setItem("tasks", JSON.stringify(state.tasks));
+    localStorage.setItem("nextTaskId", state.nextTaskId);
+}
 
 /** -----------------------------
- * Table Rendering
+ * Table Rendering & Storage Load
  ------------------------------ */
-// Render all tasks in the table
+function loadFromLocalStorage() {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    const storedId = localStorage.getItem("nextTaskId");
+
+    if (storedTasks) state.tasks = storedTasks;
+    if (storedId) state.nextTaskId = Number(storedId);
+}
+
 function renderTasks() {
+    if (!tableBody) return;
     tableBody.innerHTML = "";
 
     state.tasks.forEach(task => {
         const row = createElement("tr");
 
-        // Task Name
         const nameCell = createElement("td");
         nameCell.textContent = task.name;
 
-        // Task Date
         const dateCell = createElement("td");
         dateCell.textContent = task.date;
 
-        // Task Status
         const statusCell = createElement("td");
         const statusBtn = createElement("button", [task.isDone ? "done" : "not-done"]);
         statusBtn.textContent = task.isDone ? "Completed ✅" : "Incomplete ❌";
 
-        // Toggle task status on click
         statusBtn.addEventListener("click", () => {
             task.isDone = !task.isDone;
+            saveToLocalStorage();
             renderTasks();
         });
         statusCell.appendChild(statusBtn);
 
-        // Action buttons: Edit and Delete
         const actionCell = createElement("td");
         const editBtn = createElement("button", ["edit"]);
         editBtn.textContent = "Edit";
@@ -142,7 +149,6 @@ function renderTasks() {
 
         actionCell.append(editBtn, deleteBtn);
 
-        // Append cells to the row
         row.append(nameCell, dateCell, statusCell, actionCell);
         tableBody.appendChild(row);
     });
@@ -151,16 +157,25 @@ function renderTasks() {
 /** -----------------------------
  * Event Listeners
  ------------------------------ */
-// Show add task form when clicking the button
-addTaskBtn.addEventListener("click", () => {
+addTaskBtn && addTaskBtn.addEventListener("click", () => {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // ensure two digits
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
     const day = String(currentDate.getDate()).padStart(2, '0');
 
-    const today = `${year}-${month}-${day}`; // format for HTML input type="date"
-
-    // pass today's date as the default value in the form
+    const today = `${year}-${month}-${day}`;
     renderTaskForm(addTask, { name: '', date: today, isDone: false });
 });
-// ...existing code...
+
+/** -----------------------------
+ * Initialize on page load
+ ------------------------------ */
+// Option A: If your script is at the end of <body>, this is fine:
+loadFromLocalStorage();
+renderTasks();
+
+// Option B: If your script is in <head>, wrap with DOMContentLoaded:
+// document.addEventListener("DOMContentLoaded", () => {
+//     loadFromLocalStorage();
+//     renderTasks();
+// });
