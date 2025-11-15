@@ -122,3 +122,109 @@ tr:nth-child(even) {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
+
+/* الزر لفتح الفورم */
+.open-form-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.open-form-btn:hover {
+    background-color: #0056b3;
+}
+
+/* خلفية الفورم */
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* مخفي افتراضياً */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* صندوق الفورم */
+.form-modal {
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* زر الإغلاق */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.addtask {
+    background-color: #28a745;
+    color: rgb(51, 255, 0);
+    border: none;
+    padding: 10px;
+    margin: 15px auto 0 auto;
+    /* top auto bottom auto to center horizontally */
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    /* optional to limit width */
+    font-size: 16px;
+    display: block;
+    /* important for centering */
+}
+
+.addtask:hover {
+    background-color: #186229;
+}
+
+
+#form {
+    transition: all 0.3s ease;
+    /* smooth transition */
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+#form.show {
+    max-height: 500px;
+    /* adjust based on form size */
+    opacity: 1;
+}
