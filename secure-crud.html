@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure CRUD - Names</title>
+    <!-- External stylesheet for secure CRUD -->
+    <link rel="stylesheet" href="css/secure-crud.css">
+</head>
+
+<body>
+
+    <form id="nameForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="nameTableBody"></tbody>
+    </table>
+
+    <!-- External JS for secure CRUD -->
+    <script src="js/secure-crud.js"></script>
+
+</body>
+
+</html>
