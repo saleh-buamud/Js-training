@@ -1,0 +1,77 @@
+/* Styles extracted from t.html - Task Manager */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background: #f3f3f3;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.add-btn {
+    background: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #343a40;
+    color: white;
+}
+
+.icon-btn {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.edit {
+    color: #007bff;
+}
+
+.delete {
+    color: #dc3545;
+}
+
+.done {
+    color: #28a745;
+}
+
+button {
+    border: none;
+    background-color: white;
+}
+
+.done-task {
+    text-decoration: line-through;
+    color: gray;
+}

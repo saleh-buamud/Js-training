@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- External stylesheet for Task Manager -->
+    <link rel="stylesheet" href="css/task-manager.css">
+</head>
+
+<body>
+
+    <h1>Task Manager</h1>
+
+    <button id="addTaskBtn" class="add-btn">
+        <i class="fa fa-plus"></i> Add Task
+    </button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task Name</th>
+                <th>Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+        <tbody id="taskBody"></tbody>
+    </table>
+    <!-- Load task manager logic (renders ID column) -->
+    <script src="js/task-manager.js"></script>
+</body>
+
+</html>

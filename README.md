@@ -164,6 +164,55 @@ This task creates an interactive color changer that randomly changes the backgro
 
 ---
 
+### Task 12: DOM Interaction - Input Preview & Greetings
+**Location:** `task12/`  
+**Files:** `task12-dom-interaction.html`, `task12-dom-interaction.js`
+
+**Description:**  
+This task demonstrates DOM interactions with an input field: entering a name, displaying a preview when the mouse leaves the input, and rendering greeting headings when the user submits the name. It focuses on safe DOM insertion (using textContent), event handling (click, mouseenter, mouseleave), and dynamic element creation.
+
+**Concepts:**
+- Event listeners (click, mouseenter, mouseleave)
+- Creating and appending DOM elements
+- Input trimming and validation
+- XSS-safe insertion using textContent
+
+---
+
+## 🗂 Additional Projects
+
+Following the same style as tasks, the repository includes two small projects (standalone pages) that demonstrate CRUD and task management patterns.
+
+### Project: Task Manager
+**Location:** project root  
+**Files:** `task-manager.html`, `css/task-manager.css`, `js/task-manager.js`
+
+**Description:**  
+A small task manager that stores tasks in localStorage. Users can add tasks (prompt), edit, delete, and mark tasks as done. The table shows an auto-incrementing ID for each task.
+
+**Concepts:**
+- localStorage persistence
+- Dynamic table rendering
+- CRUD operations (Create, Read, Update, Delete)
+- Accessibility attributes on interactive elements
+
+---
+
+### Project: Secure CRUD - Names
+**Location:** project root  
+**Files:** `secure-crud.html`, `css/secure-crud.css`, `js/secure-crud.js`
+
+**Description:**  
+A small CRUD example for managing names with localStorage persistence. Supports adding, updating, and deleting names. The implementation emphasizes safe DOM updates and form handling.
+
+**Concepts:**
+- Form handling and validation
+- localStorage usage
+- Table rendering with unique IDs
+- Separation of concerns (external CSS and JS)
+
+---
+
 ## 🚀 How to Use
 
 1. Navigate to any task folder (e.g., `task1/`, `task2/`, etc.)
@@ -204,9 +253,20 @@ Js-training/
 ├── task10/
 │   ├── task10-color-changer.html
 │   └── task10-color-changer.js
+├── task12/
+│   ├── task12-dom-interaction.html
+│   └── task12-dom-interaction.js
+├── task-manager.html
+├── secure-crud.html
+├── css/
+│   ├── master.css
+│   ├── task-manager.css
+│   └── secure-crud.css
+├── js/
+│   ├── task-manager.js
+│   └── secure-crud.js
 ├── README.md
-└── css/
-    └── master.css
+└── project.html
 ```
 
 ---
